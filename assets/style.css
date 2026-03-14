@@ -1,0 +1,61 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+.bar { padding: 14px 16px; border-bottom: 1px solid #ddd; }
+.bar h1 { margin: 0 0 6px 0; font-size: 18px; }
+.hint { font-size: 13px; opacity: 0.75; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 12px;
+  padding: 12px;
+  height: calc(100vh - 66px);
+}
+
+.panel { border: 1px solid #ddd; border-radius: 10px; padding: 12px; overflow: auto; }
+.panel h2 { margin: 10px 0; font-size: 15px; }
+
+label { display: block; margin: 10px 0; font-size: 13px; }
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.buttons { grid-template-columns: 1fr 1fr; }
+
+button { cursor: pointer; }
+
+.status { margin-top: 10px; font-size: 13px; min-height: 18px; }
+.status.ok { color: #0a7a0a; }
+.status.err { color: #b00020; }
+
+.mapWrap { border: 1px solid #ddd; border-radius: 10px; overflow: hidden; }
+#map { width: 100%; height: 100%; }
+
+.list { font-size: 13px; }
+.list .item { padding: 8px; border: 1px solid #eee; border-radius: 10px; margin: 8px 0; }
+.muted { opacity: 0.7; }
+
+.delete-btn {
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  background: #ffdddd;
+  font-weight: bold;
+}
+
+.delete-btn:hover {
+  background: #ffbbbb;
+}
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; height: auto; }
+  .mapWrap { height: 60vh; }
+}
